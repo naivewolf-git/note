@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://114.67.76.65:3306/note?useUnicode=true
+      username: root
+      password: Yangxiaoli+888
+      max-active: 30
+      initial-size: 1
+      min-idle: 5
+      max-wait: 10000
+      time-between-eviction-runs-millis: 10000
+      test-while-idle: true
+      filters: stat
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 500
+          enabled: true

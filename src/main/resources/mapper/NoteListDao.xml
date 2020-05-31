@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ch.note.repository.NoteListDao">
+    <resultMap id="BaseResultMap" type="com.ch.note.bean.NoteList">
+        
+        <id column="list_id" jdbcType="INTEGER" property="listId"/>
+        <id column="catalogue_id" jdbcType="INTEGER" property="catalogueId"/>
+        <id column="note_date" jdbcType="DATE" property="noteDate"/>
+        <id column="is_top" jdbcType="INTEGER" property="isTop"/>
+        <id column="title" jdbcType="VARCHAR" property="title"/>
+        <id column="content" jdbcType="VARCHAR" property="content"/>
+        <id column="picture" property="picture" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+        <id column="words" jdbcType="VARCHAR" property="words"/>
+        
+    </resultMap>
+
+    <select id="selectAll" parameterType="com.ch.note.bean.NoteList" resultMap="BaseResultMap">
+        select list_id, catalogue_id, note_date, is_top, title, content, picture, words
+        from list
+    </select>
+
+    <select id="selectById" parameterType="com.ch.note.bean.NoteList" resultMap="BaseResultMap">
+        select list_id, catalogue_id, note_date, is_top, title, content, picture, words
+        from list
+        where list_id = #{listId}
+    </select>
+
+    <insert id="insert" parameterType="com.ch.note.bean.NoteList">
+        insert into List
+            (catalogue_id, note_date, is_top, title, content, picture, words)
+        values (#{catalogueId}, #{noteDate}, #{isTop}, #{title}, #{content}, #{picture}, #{words})
+    </insert>
+</mapper>
