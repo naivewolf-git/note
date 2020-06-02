@@ -1,5 +1,6 @@
 package com.ch.note.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -27,6 +28,7 @@ public class NoteList {
     /**
      * 日期
      */
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date noteDate;
 
     /**
@@ -47,7 +49,7 @@ public class NoteList {
     /**
      * 图片
      */
-    private byte[] picture;
+    private String picture;
 
     /**
      * 文字

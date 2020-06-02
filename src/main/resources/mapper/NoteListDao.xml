@@ -9,7 +9,7 @@
         <id column="is_top" jdbcType="INTEGER" property="isTop"/>
         <id column="title" jdbcType="VARCHAR" property="title"/>
         <id column="content" jdbcType="VARCHAR" property="content"/>
-        <id column="picture" property="picture" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+        <id column="picture" jdbcType="VARCHAR"  property="picture"/>
         <id column="words" jdbcType="VARCHAR" property="words"/>
         
     </resultMap>
