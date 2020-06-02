@@ -17,3 +17,9 @@ spring:
           log-slow-sql: true
           slow-sql-millis: 500
           enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+file:
+  path: G:\\data\\temp\\images\\

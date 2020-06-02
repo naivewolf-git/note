@@ -2,6 +2,7 @@ package com.ch.note.bean;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
@@ -55,4 +56,8 @@ public class NoteList {
      * 文字
      */
     private String words;
+    /**
+     * 文件
+     */
+    private MultipartFile file;
 }
